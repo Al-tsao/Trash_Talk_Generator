@@ -1,0 +1,78 @@
+<!--  ./views/index.handlebars -->
+<div class="container">
+  <div class="row justify-content-center">
+    <nav class="navbar navbar-light">
+      <span class="navbar-brand mb-0 font-weight-bold">
+        <h1>你想對誰說幹話?</h1>
+      </span>
+    </nav>
+  </div>
+</div>
+<form method="POST" action="/">
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="card col-4 border-0">
+        <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5668/angry-developer.jpg"
+          class="card-img-top" alt="..." height="200">
+        <div class=" card-body">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="custom-control custom-radio">
+                <input type="radio" id="engineer" name="customRadio" value="engineer" class="custom-control-input"
+                  {{#ifEqual options.customRadio 'engineer'}}checked{{/ifEqual}}>
+                <label class="custom-control-label" for="engineer"></label>
+              </div>
+              <h5>工程師</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card col-4 border-0">
+        <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5667/angry-designer.jpg"
+          class="card-img-top" alt="..." height="200">
+        <div class="card-body">
+          <div class="container">
+            <div class="row  justify-content-center">
+              <div class="custom-control custom-radio">
+                <input type="radio" id="designer" name="customRadio" value="designer" class="custom-control-input"
+                  {{#ifEqual options.customRadio 'designer'}}checked{{/ifEqual}}>
+                <label class="custom-control-label" for="designer"></label>
+              </div>
+              <h5>設計師</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card col-4 border-0">
+        <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5669/angry-founder.jpg"
+          class="card-img-top" alt="..." height="200">
+        <div class="card-body">
+          <div class="container">
+            <div class="row  justify-content-center">
+              <div class="custom-control custom-radio">
+                <input type="radio" id="entrepreneur" name="customRadio" value="entrepreneur"
+                  class="custom-control-input" {{#ifEqual options.customRadio 'entrepreneur'}}checked{{/ifEqual}}>
+                <label class="custom-control-label" for="entrepreneur"></label>
+              </div>
+              <h5>創業家</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row align-items-center justify-content-center">
+      <div><button class="btn btn-dark" type="submit">產生幹話</button></div>
+      <div class="ml-2">
+        <textarea class="form-control" name="rubbish-talk" id="rubbish-talk" rows="3"
+          readonly="readonly">{{trashTalk}}</textarea>
+      </div>
+    </div>
+  </div>
+</form>
